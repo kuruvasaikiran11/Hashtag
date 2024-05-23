@@ -25,7 +25,7 @@ function Login() {
     e.preventDefault();
     console.log(formData)
     try {
-      const response = await axios.post('http://localhost:5001/auth/login', formData);
+      const response = await axios.post('https://hashtag-273q.onrender.com/auth/login', formData);
       if (response && response.data) {
         const { token } = response.data;
         localStorage.setItem('token', token); // Store token in local storage

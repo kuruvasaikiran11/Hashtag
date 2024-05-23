@@ -54,7 +54,7 @@ const Upload = ({ handleFilter }) => {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/images/upload", {
+      const response = await fetch("https://hashtag-273q.onrender.com/images/upload", {
         method: "POST",
         body: formData,
       });

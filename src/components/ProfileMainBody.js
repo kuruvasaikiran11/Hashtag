@@ -21,7 +21,7 @@
 //     // useEffect(() => {
 //     //     const fetchImages = async () => {
 //     //         try {
-//     //             const response = await fetch('http://localhost:5001/images');
+//     //             const response = await fetch('https://hashtag-273q.onrender.com/images');
 //     //             const data = await response.json();
 //     //             setImages(data);
 //     //         } catch (error) {
@@ -139,7 +139,7 @@ const ProfileMainBody = () => {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await fetch('http://localhost:5001/images');
+                const response = await fetch('https://hashtag-273q.onrender.com/images');
                 const data = await response.json();
                 setImages(data);
             } catch (error) {
@@ -231,7 +231,7 @@ const ProfileMainBody = () => {
                 </div>
                 <div className={styles.images}>
                     {filteredImages.map((image, index) => (
-                        <img key={index} src={`http://localhost:5001${image.url}`} alt="Hashtag" />
+                        <img key={index} src={`https://hashtag-273q.onrender.com${image.url}`} alt="Hashtag" />
                     ))}
                 </div>
             </main>
