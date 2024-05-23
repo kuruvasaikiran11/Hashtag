@@ -1,0 +1,14 @@
+.checkbox-text{
+    opacity: .6;
+}
+
+#check{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.checkbox-text p{
+    margin: 20px 0px;
+}

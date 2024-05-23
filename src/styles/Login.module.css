@@ -1,0 +1,52 @@
+.container-fluid {
+    height: 100%;
+}
+
+.row.no-gutters {
+    height: 100%;
+}
+
+.col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-4 {
+    width: 490px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.alert.alert-danger {
+    /* Add your alert styles here */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    /* Add your button styles here */
+}
+
+.checkbox-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-section {
+    /* Add your text-section styles here */
+}
+
+.right-section {
+    /* Add your right-section styles here */
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
+body {
+    margin: 0;
+    font-family: 'Red Rose', sans-serif;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url('../images/backgrount-img.png') no-repeat center center/cover;
+}
+
+.headerBackground {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+.headerContent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.menuBar {
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    /* position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-10%, -100%);
+    text-align: left;
+    color: #fff; */
+}
+
+.menu {
+    display: flex;
+    /* position: absolute;
+    top: 20%;
+    left: 80%;
+    transform: translate(200%, 0); */
+}
+
+.menu ul {
+    /* display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0; */
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+    white-space: nowrap; 
+}
+
+.searchBar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.searchBar input {
+    width: 800px;
+    padding: 22px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.searchBar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.main-body {
+    padding: 20px;
+}
+
+.hashtags {
+    margin: 20px 0;
+}
+
+.hashtags button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: 1px solid #D3D3D3;
+    border-radius: 6px;
+    background: none;
+    cursor: pointer;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.images img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.show{
+    display: block!important;
+}
+.hide{
+    display: hide;
+}
+
+.dropdown-menu{ 
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #f8f9fa;
+  min-width: 160px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-menu li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #e9ecef; /* Highlight color on hover */
+  }
+  
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    width: 800px;
+    position: relative;
+  }
+  
+  .searchInput {
+    flex: 1;
+    padding: 22px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+  
+  .searchInput::placeholder{
+    margin-left: 80px;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    left: 4px;
+    color: gray;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .dropdownButton {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 22px;
+    border-radius: 0 10px 10px 0;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    list-style: none;
+    padding: 10px 0;
+    display: none;
+  }
+  
+  .dropdownMenu.show {
+    display: block;
+  }
+  
+  .dropdownItem {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .dropdownItem:hover {
+    background: #f0f0f0;
+  }
+  
+  .quote {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 58.51px;
+    text-align: center;
+    padding: 20px;
+    margin: 0 12px;
+  }
+  
+  .quote h2 {
+    font-size: 48px;
+  }
+  
