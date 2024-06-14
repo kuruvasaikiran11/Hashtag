@@ -23,7 +23,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData)
+    // console.log(formData)
     try {
       const response = await axios.post('https://hashtag-273q.onrender.com/auth/login', formData);
       if (response && response.data) {

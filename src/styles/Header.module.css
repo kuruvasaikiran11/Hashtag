@@ -29,29 +29,18 @@ body {
     justify-content: space-around;
     align-items: center;
     color: white;
-    /* position: absolute;
-    top: 20%;
-    left: 20%;
-    transform: translate(-10%, -100%);
-    text-align: left;
-    color: #fff; */
 }
 
 .menu {
     display: flex;
-    /* position: absolute;
-    top: 20%;
-    left: 80%;
-    transform: translate(200%, 0); */
+}
+
+.menuBar svg{
+  display: none;
 }
 
 .menu ul {
-    /* display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0; */
-    display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   list-style: none;
@@ -118,10 +107,10 @@ body {
 }
 
 .show{
-    display: block!important;
+    display: flex!important;
 }
-.hide{
-    display: hide;
+.hide, .hamburger{
+    display: none;
 }
 
 .dropdown-menu{ 
@@ -143,7 +132,7 @@ body {
   }
   
   .dropdown-menu li:hover {
-    background-color: #e9ecef; /* Highlight color on hover */
+    background-color: #e9ecef; 
   }
   
   .searchContainer {
@@ -229,3 +218,83 @@ body {
     font-size: 48px;
   }
   
+  @media (max-width: 480px) {
+    .header{
+      width: auto;
+      height: auto;
+    }
+    .headerBackground{
+      height: 200px;
+    }
+    .menuBar{
+      padding: 2px;
+    }
+    .menuBar h1{
+      font-size: 16px;
+    }
+    .hamburgerMenu{
+      position: absolute; 
+      display: flex;
+      flex-flow: column wrap;
+      gap: 2px;
+    }
+    .hamburgerMenu a{
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      padding: 0px 2px;
+    }
+    .logo{
+      font-size: 16px;
+    }
+    .dropdownButton{
+      display: none;
+    }
+    .dropdownMenu{
+      display: none;
+    }
+    .quote h2{
+      font-size: 12px;
+    }
+    .menu{
+      display: none;
+    }
+    .hamburger{
+      display: block;
+    }
+    .menuBar svg{
+      display: block;
+    }
+    .searchContainer {
+      width: 100px;
+    }
+    .searchInput {
+      flex: 1;
+      padding: 2px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+    .searchInput::placeholder{
+      margin-left: 0px;
+    }
+    .searchIcon {
+      position: absolute;
+      left: 4px;
+      color: gray;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .searchInput::placeholder{
+      margin-left: 0px;
+      font-size: 8px;
+    }
+    .searchBar input {
+      padding: 0px 2px;
+      margin-left: 12px;
+    }
+    .searchIcon{
+      font-size: 10px;
+    }
+}

@@ -30,6 +30,10 @@ body {
     align-items: center;
 }
 
+.menuBar svg{
+  display: none;
+}
+
 .logo {
   font-size: 40px;
   color: white;
@@ -142,9 +146,10 @@ body {
 }
 
 .dropdownItem {
-  /* padding: 10px 20px; */
   cursor: pointer;
   color: black;
+  margin: 0;
+  padding: 0px 8px;
 }
 
 .dropdownItem:hover {
@@ -169,5 +174,91 @@ body {
 
 .profileDropdownContainer {
   position: relative;
-  display: inline-block; /* Ensure it doesn't take up full width */
-} 
+  display: inline-block; 
+}  
+
+.hamburger{
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .header{
+    width: auto;
+    height: auto;
+  }
+  .headerBackground{
+    height: 200px;
+  }
+  .menuBar{
+    padding: 2px;
+  }
+  .menuBar h1{
+    font-size: 16px;
+  }
+  .hamburger{
+    display: block;
+  }
+  .hamburgerMenu{
+    position: absolute; 
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2px;
+  }
+  .hamburgerMenu a{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    padding: 0px 2px;
+  }
+  .logo{
+    font-size: 16px;
+  }
+  .dropdownButton{
+    display: none;
+  }
+  .dropdownMenu{
+    display: none;
+  }
+  .quote h2{
+    font-size: 12px;
+  }
+  .menu{
+    display: none;
+  }
+  .menuBar svg{
+    display: block;
+  }
+  
+  .searchContainer {
+    width: 100px;
+  }
+  .searchInput {
+    flex: 1;
+    padding: 2px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+  }
+  .searchInput::placeholder{
+    margin-left: 0px;
+  }
+  .searchIcon {
+    position: absolute;
+    left: 4px;
+    color: gray;
+  }
+  .dropdown {
+    position: relative;
+  }
+  .searchInput::placeholder{
+    margin-left: 0px;
+    font-size: 8px;
+  }
+  .searchBar input {
+    padding: 0px 2px;
+    margin-left: 12px;
+  }
+  .searchIcon{
+    font-size: 10px;
+  }
+}

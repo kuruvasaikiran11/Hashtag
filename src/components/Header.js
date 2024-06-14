@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/Header.module.css";
-import { FaSearch, FaChevronDown } from "react-icons/fa";
+import { FaSearch, FaChevronDown, FaBars } from "react-icons/fa";
 
 const Header = ({ handleFilter }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("All Images");
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+  const hamburgerRef = useRef(null);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleHamburgerToggle = () => {
+    setHamburgerOpen(!hamburgerOpen);
   };
 
   const handleItemClick = (tag) => {
@@ -30,7 +36,14 @@ const Header = ({ handleFilter }) => {
       <div className={styles.headerBackground}>
         <div className={styles.headerContent}>
           <div className={styles.menuBar}>
-            <h1><Link to="/" style={{color:"white", textDecoration:"inherit"}}>#Hashtag</Link></h1>
+            <h1>
+              <Link
+                to="/"
+                style={{ color: "white", textDecoration: "inherit" }}
+              >
+                #Hashtag
+              </Link>
+            </h1>
             <nav className={styles.menu}>
               <ul>
                 <li>
@@ -38,43 +51,69 @@ const Header = ({ handleFilter }) => {
                     <button
                       className="btn dropdown-toggle"
                       type="button"
-                      onClick={handleToggle} style={{color:'white', border: "2px", solid: "#FFFFFF"}}
+                      onClick={handleToggle}
+                      style={{
+                        color: "white",
+                        border: "2px",
+                        solid: "#FFFFFF",
+                      }}
                     >
                       Explore
                     </button>
                     <ul
-                    className={`dropdown-menu ${isOpen ? "show" : ""}`}
-                    style={{
-                        display: isOpen ? "block" : "none"
-                    }}
-                  >
-                    <li className={styles.dropdownItem} onClick={() => handleItemClick("Food")}>Food</li>
-                    <li className={styles.dropdownItem} onClick={() => handleItemClick("Travel")}>Travel</li>
-                    <li className={styles.dropdownItem} onClick={() => handleItemClick("Nature")}>Nature</li>
-                    {/* Add more hashtag items as needed */}
-                  </ul>
+                      className={`dropdown-menu ${isOpen ? "show" : ""}`}
+                      style={{
+                        display: isOpen ? "block" : "none",
+                      }}
+                    >
+                      <li
+                        className={styles.dropdownItem}
+                        onClick={() => handleItemClick("Food")}
+                      >
+                        Food
+                      </li>
+                      <li
+                        className={styles.dropdownItem}
+                        onClick={() => handleItemClick("Travel")}
+                      >
+                        Travel
+                      </li>
+                      <li
+                        className={styles.dropdownItem}
+                        onClick={() => handleItemClick("Nature")}
+                      >
+                        Nature
+                      </li>
+                      {/* Add more hashtag items as needed */}
+                    </ul>
                   </div>
                 </li>
                 <li>
-                  <Link to="/login" className="btn btn-outline-light">Login</Link>
+                  <Link to="/login" className="btn btn-outline-light">
+                    Login
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/signup" className="btn btn-light">Sign Up</Link>
+                  <Link to="/signup" className="btn btn-light">
+                    Sign Up
+                  </Link>
                 </li>
               </ul>
             </nav>
+            <div className={`${styles.hamburger}`}><FaBars ref={hamburgerRef} className={`${styles.hamburger} ${styles.icon}`} onClick={handleHamburgerToggle} />
+            {hamburgerOpen && (
+              <div className={`${styles.hamburgerMenu} ${hamburgerOpen ? styles.show : ""}`}>
+                <Link to="/login" className="btn btn-outline-light">
+                    Login
+                  </Link>
+                  <Link to="/signup" className="btn btn-light">
+                    Sign Up
+                  </Link>
+              </div>
+            )}</div>
           </div>
-          
-          {/* <div className={styles.searchBar}>
-          <div className={styles.quote}>
-            <h2>Let’s Find The Perfect Free Photo For You</h2>
-          </div>
-             <input className=""
-               type="text"
-               placeholder="Search for all images on #Hashtag"
-             />
-           </div> */}
-           <div className={styles.searchBar}>
+
+          <div className={styles.searchBar}>
             <div className={styles.quote}>
               <h2>Let’s Find The Perfect Free Photo For You</h2>
             </div>
@@ -92,15 +131,38 @@ const Header = ({ handleFilter }) => {
                   className={styles.dropdownButton}
                   onClick={handleDropdownToggle}
                 >
-                  {selectedOption}<FaChevronDown />
+                  {selectedOption}
+                  <FaChevronDown />
                 </button>
                 <ul
-                  className={`${styles.dropdownMenu} ${dropdownOpen ? styles.show : ""}`}
+                  className={`${styles.dropdownMenu} ${
+                    dropdownOpen ? styles.show : ""
+                  }`}
                 >
-                  <li className={styles.dropdownItem} onClick={() => handleOptionSelect("All Images")}>Nature</li>
-                  <li className={styles.dropdownItem} onClick={() => handleOptionSelect("Photos")}>Food</li>
-                  <li className={styles.dropdownItem} onClick={() => handleOptionSelect("Illustrations")}>Travel</li>
-                  <li className={styles.dropdownItem} onClick={() => handleOptionSelect("Vectors")}>Happy</li>
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleOptionSelect("All Images")}
+                  >
+                    Nature
+                  </li>
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleOptionSelect("Photos")}
+                  >
+                    Food
+                  </li>
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleOptionSelect("Illustrations")}
+                  >
+                    Travel
+                  </li>
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleOptionSelect("Vectors")}
+                  >
+                    Happy
+                  </li>
                 </ul>
               </div>
             </div>

@@ -93,3 +93,21 @@
     text-align: center;
     padding-bottom: 4%;
 }
+
+@media (max-width: 480px) {
+    .mainBody h3{
+        font-size: 20px;
+    }
+    .hashtags{
+        flex-wrap: wrap;
+        padding: 2%;
+        gap: 2px;
+    }
+    .hashtags button{
+        width: auto;
+        height: auto;
+        padding: 0px 2px;
+        font-size: 10px;
+        margin: 0px 1px;
+    }
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Profile_Header.module.css";
-import { FaBell, FaSearch, FaChevronDown } from "react-icons/fa";
+import { FaBell, FaSearch, FaChevronDown, FaBars } from "react-icons/fa";
 import { AiOutlineUpload } from "react-icons/ai";
 
 const ProfileHeader = ({ handleFilter }) => {
@@ -9,6 +9,7 @@ const ProfileHeader = ({ handleFilter }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("All Images");
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -20,6 +21,10 @@ const ProfileHeader = ({ handleFilter }) => {
 
   const handleProfileDropdownToggle = () => {
     setProfileDropdownOpen(!profileDropdownOpen);
+  };
+
+  const handleHamburgerToggle = () => {
+    setHamburgerOpen(!hamburgerOpen);
   };
 
   const handleItemClick = (tag) => {
@@ -58,7 +63,7 @@ const ProfileHeader = ({ handleFilter }) => {
                       className="btn dropdown-toggle"
                       type="button"
                       onClick={handleToggle}
-                      style={{ color: 'white', border: "none" }}
+                      style={{ color: "white", border: "none" }}
                     >
                       Explore
                     </button>
@@ -66,9 +71,24 @@ const ProfileHeader = ({ handleFilter }) => {
                       className={`dropdown-menu ${isOpen ? "show" : ""}`}
                       style={{ display: isOpen ? "block" : "none" }}
                     >
-                      <li className={styles.dropdownItem} onClick={() => handleItemClick("Food")}>Food</li>
-                      <li className={styles.dropdownItem} onClick={() => handleItemClick("Travel")}>Travel</li>
-                      <li className={styles.dropdownItem} onClick={() => handleItemClick("Nature")}>Nature</li>
+                      <li
+                        className={styles.dropdownItem}
+                        onClick={() => handleItemClick("Food")}
+                      >
+                        Food
+                      </li>
+                      <li
+                        className={styles.dropdownItem}
+                        onClick={() => handleItemClick("Travel")}
+                      >
+                        Travel
+                      </li>
+                      <li
+                        className={styles.dropdownItem}
+                        onClick={() => handleItemClick("Nature")}
+                      >
+                        Nature
+                      </li>
                       {/* Add more hashtag items as needed */}
                     </ul>
                   </div>
@@ -77,30 +97,29 @@ const ProfileHeader = ({ handleFilter }) => {
                   <FaBell className={styles.icon} />
                 </li>
                 <li>
-                  {/* <div className={styles.profileDropdown}>
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrCLHZeA--7ckaEIUPD-Z0XASJ5BxYQYLsdA&s"
-                      alt="Profile"
-                      className={styles.profilePic}
-                      onClick={handleProfileDropdownToggle}
-                    />
-                    <ul className={`${styles.dropdownMenu} ${profileDropdownOpen ? styles.show : ""}`}>
-                      <li className={styles.dropdownItem} onClick={handleLogout}>Logout</li>
-                    </ul>
-                  </div> */}
                   <div className={styles.profileDropdownContainer}>
-  <div className={styles.profileDropdown}>
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrCLHZeA--7ckaEIUPD-Z0XASJ5BxYQYLsdA&s"
-      alt="Profile"
-      className={styles.profilePic}
-      onClick={handleProfileDropdownToggle}
-    />
-    <ul className={`${styles.dropdownMenu} ${profileDropdownOpen ? styles.show : ""}`}>
-      <li className={styles.dropdownItem} onClick={handleLogout}>Logout</li>
-    </ul>
-  </div>
-</div>
+                    <div className={styles.profileDropdown}>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrCLHZeA--7ckaEIUPD-Z0XASJ5BxYQYLsdA&s"
+                        alt="Profile"
+                        className={styles.profilePic}
+                        onClick={handleProfileDropdownToggle}
+                      />
+                      <ul
+                        className={`${styles.dropdownMenu} ${
+                          profileDropdownOpen ? styles.show : ""
+                        }`}
+                      >
+                        <li
+                          className={styles.dropdownItem}
+                          onClick={handleLogout}
+                          style={{ margin: 0 }}
+                        >
+                          Logout
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </li>
                 <li>
                   <Link to="/upload" className="btn btn-light">
@@ -109,6 +128,15 @@ const ProfileHeader = ({ handleFilter }) => {
                 </li>
               </ul>
             </nav>
+            <div className={`${styles.hamburger}`}><FaBars className={`${styles.hamburgerIcon} ${styles.icon}`} onClick={handleHamburgerToggle} />
+            {hamburgerOpen && (
+              <div className={`${styles.hamburgerMenu}`}>
+                <Link to="/upload" className="btn btn-light">
+                  Upload
+                </Link>
+                <Link to='/login' className="btn btn-light" onClick={handleLogout}>Logout</Link>
+              </div>
+            )}</div>
           </div>
           <div className={styles.searchBar}>
             <div className={styles.quote}>
@@ -128,15 +156,38 @@ const ProfileHeader = ({ handleFilter }) => {
                   className={styles.dropdownButton}
                   onClick={handleDropdownToggle}
                 >
-                  {selectedOption}<FaChevronDown />
+                  {selectedOption}
+                  <FaChevronDown />
                 </button>
                 <ul
-                  className={`${styles.dropdownMenu} ${dropdownOpen ? styles.show : ""}`}
+                  className={`${styles.dropdownMenu} ${
+                    dropdownOpen ? styles.show : ""
+                  }`}
                 >
-                  <li className={styles.dropdownItem} onClick={() => handleOptionSelect("All Images")}>Nature</li>
-                  <li className={styles.dropdownItem} onClick={() => handleOptionSelect("Photos")}>Food</li>
-                  <li className={styles.dropdownItem} onClick={() => handleOptionSelect("Illustrations")}>Travel</li>
-                  <li className={styles.dropdownItem} onClick={() => handleOptionSelect("Vectors")}>Happy</li>
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleOptionSelect("All Images")}
+                  >
+                    Nature
+                  </li>
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleOptionSelect("Photos")}
+                  >
+                    Food
+                  </li>
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleOptionSelect("Illustrations")}
+                  >
+                    Travel
+                  </li>
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleOptionSelect("Vectors")}
+                  >
+                    Happy
+                  </li>
                 </ul>
               </div>
             </div>

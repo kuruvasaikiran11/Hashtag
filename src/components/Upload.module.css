@@ -6,7 +6,17 @@
 
 }
 
+.header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: url('../images/backgrount-img.png') no-repeat center center/cover;
+}
+
 .hashtagSection{
+
+}
+.selectFilesBtn{
 
 }
 
@@ -73,4 +83,140 @@
     align-items: center;
     flex-flow: wrap column;
     cursor: pointer;
+}
+
+/* Example styles */
+.suggestionsContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 2% 10%;
+  }
+  
+  .suggestionsContainer .btn {
+    margin: 2px;
+    color: black!important;
+  }
+
+  .hamburger{
+    display: none;
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    list-style: none;
+    padding: 10px 0;
+    display: none;
+  }
+  
+  .dropdownMenu.show {
+    display: block;
+  }
+  
+  .dropdownItem {
+    cursor: pointer;
+    color: black;
+    margin: 0;
+    padding: 0px 8px;
+  }
+  
+  .dropdownItem:hover {
+    background: #f0f0f0;
+  }
+
+  #mainContainer{
+
+  }
+    
+  @media (max-width: 480px) {
+    .header{
+      width: auto;
+      height: auto;
+    }
+    .headerBackground{
+      height: 120px;
+    }
+    .heading{
+        font-size: 16px;
+    }
+    .selectFiles{
+        top: 48%;
+        left: 18%;
+    }
+    .selectFiles p{
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+    .selectFiles p:last-of-type{
+        font-size: 12px;
+        margin: 0;
+    }
+    .menuBar{
+      padding: 2px;
+    }
+    .menuBar h1{
+      font-size: 16px;
+    }
+    .hamburgerMenu{
+      position: absolute; 
+      display: flex;
+      flex-flow: column wrap;
+      gap: 2px;
+    }
+    .hamburgerMenu a{
+      padding: 0;
+      margin: 0;
+      font-size: 12px;
+      padding: 0px 2px;
+    }
+    .logo{
+      font-size: 16px;
+    }
+    .dropdownButton{
+      display: none;
+    }
+    .dropdownMenu{
+      display: none;
+    }
+    .quote h2{
+      font-size: 12px;
+    }
+    .menu{
+      display: none;
+    }
+    .hamburger{
+      display: block;
+    }
+    .menuBar svg{
+      display: block;
+    }
+    .uploadFiles textarea, .hashtagSection textarea{
+        width: 400px;
+        height: 150px;
+    }
+    .uploadFiles, .hashtagSection{
+        margin: auto!important;
+    }
+    .hashtagSection textarea::placeholder{
+        font-size: 12px;
+        font-weight: bolder;
+        padding: 10px 20px;
+        color: black;
+    }
+    .selectFilesBtn{
+        font-size: 12px;
+        margin: 0;
+    }
+    #mainContainer{
+        padding: 0;
+    }
+    .submitBtn{
+        font-size: 12px;
+        padding: 4px 8px;
+    }
 }

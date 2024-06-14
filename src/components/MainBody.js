@@ -10,11 +10,6 @@ import Footer from '../images/FooterLogo.png';
 
 const MainBody = () => {
     const [filter, setFilter] = useState('');
-    // const [images, setImages] = useState([{ src: image1, tags: ['Food'] },
-    // { src: image2, tags: ['Food', 'Travel'] },
-    // { src: image3, tags: ['Nature'] },
-    // { src: image4, tags: ['Travel'] },
-    // { src: image5, tags: ['Happy'] },]);
 
     const images = [
         { src: image1, tags: ['Food'] },
@@ -23,19 +18,7 @@ const MainBody = () => {
         { src: image4, tags: ['Travel'] },
         { src: image5, tags: ['Happy'] },
     ];
-    // useEffect(() => {
-    //     const fetchImages = async () => {
-    //         try {
-    //             const response = await fetch('http://localhost:5001/images');
-    //             const data = await response.json();
-    //             setImages(data);
-    //         } catch (error) {
-    //             console.error('Error fetching images:', error);
-    //         }
-    //     };
 
-    //     fetchImages();
-    // }, []);
 
     const filteredImages = filter ? images.filter(image => image.tags.includes(filter)) : images;
 
